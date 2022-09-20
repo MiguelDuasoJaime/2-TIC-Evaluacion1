@@ -1,0 +1,1 @@
+print '"Este es mi primer programa, de locos" - Antonio Lopez, 20/09/2022'
