@@ -1,0 +1,6 @@
+n1=input("Inserte el N1: ")
+n2=input("Inserte el N2: ")
+n3=input("Inserte el N3: ")
+suma=(int(n1)+int(n2)+int(n3))
+media=(suma/3)
+print(media)
