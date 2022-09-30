@@ -1,0 +1,9 @@
+def hacer_huevo_frito():
+    huevo=comprar()
+    cascar(huevo)
+    sarten(huevo)
+    encender(huevo)
+    for range (1,20):
+        aceitar(huevo)
+    servir(huevo)
+hacer_huevo_frito()
