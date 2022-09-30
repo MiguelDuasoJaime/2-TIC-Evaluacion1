@@ -1,13 +1,16 @@
 fuego=False
 def comprar():
-    dinero=3
+    dinero=3.0
     dinero=dinero-5000
     #(Mucha inflación)
+    print("Saldo actual: " + str(dinero) + "€")
     return("Güevo")
 def cascar(x):
     x=x+" cascao"
+    print(x)
 def sarten(x):
     x=x+" en sarten"
+    print(x)
 def encender(x):
     x=True
 def aceitar(x):
