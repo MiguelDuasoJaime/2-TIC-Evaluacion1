@@ -1,7 +1,7 @@
 fuego=False
-def comprar():
-    dinero=3.0
-    dinero=dinero-5000
+dinero=3.0
+def comprar(x):
+    x=x-5000
     #(Mucha inflación)
     print("Saldo actual: " + str(dinero) + "€")
     return("Güevo")
@@ -19,7 +19,7 @@ def servir(x):
     x=x+ " (ya no en sartén) en plato pa come (:"
     print(x)
 def hacer_huevo_frito():
-    huevo=comprar()
+    huevo=comprar(dinero)
     cascar(huevo)
     sarten(huevo)
     encender(fuego)
