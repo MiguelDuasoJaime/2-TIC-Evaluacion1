@@ -1,9 +1,26 @@
+fuego=False
+def comprar():
+    dinero=3
+    dinero=dinero-5000
+    #(Mucha inflación)
+    return("Güevo")
+def cascar(x):
+    x=x+" cascao"
+def sarten(x):
+    x=x+" en sarten"
+def encender(x):
+    x=True
+def aceitar(x):
+    print("sonido de aceite*")
+def servir(x):
+    x=x+ " (ya no en sartén) en plato pa come (:"
+    print(x)
 def hacer_huevo_frito():
     huevo=comprar()
     cascar(huevo)
     sarten(huevo)
-    encender(huevo)
-    for range (1,20):
+    encender(fuego)
+    for y in range (1,20):
         aceitar(huevo)
     servir(huevo)
 hacer_huevo_frito()
