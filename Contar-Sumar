@@ -1,0 +1,10 @@
+def cuenta_atras():
+    for x in range(10,0,-1):
+        print(x)
+##cuenta_atras()
+def suma_pares():
+    suma=0
+    for x in range(0,101,2):
+        suma+=x
+    print(suma)
+##suma_pares()
