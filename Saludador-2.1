@@ -1,0 +1,15 @@
+# -*- coding: cp1252 -*-
+hora=32
+while hora not in range(0,25):
+    try:
+        hora=int(input("Dame la hora: "))
+        if hora > 24 or hora < 0:
+            print("ª?")
+    except:
+        print("º¿")
+if hora < 7 or hora > 19:
+    print("Buenas noches")
+elif hora <= 13:
+    print("Buenos días")
+else:
+    print("Buenas tardes")
