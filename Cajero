@@ -1,0 +1,31 @@
+# -*- coding: cp1252 -*-
+#Ingresar una cantidad. Mostrar el dinero que tienes.
+#Pides sacar dinero, y te da lo que puede dar en billetes (si tienes dinero)
+def cajero():
+    seguir=True
+    dinero = 250
+    while seguir==True:
+        print("Tu saldo es: " +str(dinero) + "€")
+        ans = raw_input("Quieres sacar dinero? Y/N: ")
+        if ans == "Y":
+            subs=""
+            while type(subs) != type(2):
+                try:
+                    subs=int(input("Cuánto dinero quieres sacar? (Solo en billetes): "))
+                except:
+                    print("No.")
+            res=subs-(subs%5)
+            if dinero-res < 0:
+                print("-Saldo insuficiente-")
+            else:
+                dinero=dinero-res
+                print("-Se han extraído " +str(res)+ "€-")
+        elif ans == "N":
+            print("·Que tenga un buen día")
+            seguir=False
+        else:
+            print("· '"+str(ans)+"' no era una respuesta válida, asi que asumo que sería un no")
+            seguir=False
+cajero()
+
+        
