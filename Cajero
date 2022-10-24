@@ -3,10 +3,10 @@
 #Pides sacar dinero, y te da lo que puede dar en billetes (si tienes dinero)
 def cajero():
     seguir=True
-    dinero = 250
+    dinero = 250.0
     while seguir==True:
-        print("Tu saldo es: " +str(dinero) + "€")
-        ans = raw_input("Quieres sacar dinero? Y/N: ")
+        print("-Tu saldo es: " +str(dinero) + "€")
+        ans = raw_input("Quieres sacar dinero? (Y/N): ")
         if ans == "Y":
             subs=""
             while type(subs) != type(2):
@@ -21,11 +21,26 @@ def cajero():
                 dinero=dinero-res
                 print("-Se han extraído " +str(res)+ "€-")
         elif ans == "N":
-            print("·Que tenga un buen día")
-            seguir=False
+            ans2=""
+            while ans2 != "Y" and ans2!= "N":
+                ans2 = raw_input("Quieres introducir dinero? (Y/N): ")
+                if ans2 == "Y":
+                    intr=-1
+                    while intr<0:
+                        try:
+                            intr=int(input("Cuánto dinero quieres introducir?: "))
+                            if intr < 0:
+                                print("-Debe ser un número positivo-")
+                            else:
+                                dinero=dinero+intr
+                                print("-Se han introducido " + str(intr) + "€-")
+                        except:
+                            print("Mentira")
+                elif ans2 == "N":   
+                    print("-Que tenga un buen día")
+                    seguir=False
+                else:
+                    print("-'"+str(ans2)+"' no era una respuesta válida-")
         else:
-            print("· '"+str(ans)+"' no era una respuesta válida, asi que asumo que sería un no")
-            seguir=False
+            print("- '"+str(ans)+"' no era una respuesta válida-")
 cajero()
-
-        
