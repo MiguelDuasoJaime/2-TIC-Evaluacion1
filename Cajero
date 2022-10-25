@@ -1,13 +1,18 @@
 # -*- coding: cp1252 -*-
 #Ingresar una cantidad. Mostrar el dinero que tienes.
 #Pides sacar dinero, y te da lo que puede dar en billetes (si tienes dinero)
-def cajero():
+def menu():
+    print("""1-->Introducir dinero
+2-->Extraer dinero
+3-->Salir
+""")
+def cajero(dinero):
     seguir=True
-    dinero = 250.0
     while seguir==True:
         print("-Tu saldo es: " +str(dinero) + "€")
-        ans = raw_input("Quieres sacar dinero? (Y/N): ")
-        if ans == "Y":
+        menu()
+        ans = raw_input("Introduzca la acción deseada: ")
+        if ans == "2":
             subs=""
             while type(subs) != type(2):
                 try:
@@ -16,31 +21,33 @@ def cajero():
                     print("No.")
             res=subs-(subs%5)
             if dinero-res < 0:
-                print("-Saldo insuficiente-")
+                print("- Saldo insuficiente! -")
             else:
                 dinero=dinero-res
                 print("-Se han extraído " +str(res)+ "€-")
-        elif ans == "N":
-            ans2=""
-            while ans2 != "Y" and ans2!= "N":
-                ans2 = raw_input("Quieres introducir dinero? (Y/N): ")
-                if ans2 == "Y":
-                    intr=-1
-                    while intr<0:
-                        try:
-                            intr=int(input("Cuánto dinero quieres introducir?: "))
-                            if intr < 0:
-                                print("-Debe ser un número positivo-")
-                            else:
-                                dinero=dinero+intr
-                                print("-Se han introducido " + str(intr) + "€-")
-                        except:
-                            print("Mentira")
-                elif ans2 == "N":   
-                    print("-Que tenga un buen día")
-                    seguir=False
-                else:
-                    print("-'"+str(ans2)+"' no era una respuesta válida-")
+        elif ans == "1":
+            intr=-1
+            while intr<0:
+                try:
+                    intr=int(input("Cuánto dinero quieres introducir?: "))
+                    if intr < 0:
+                        print("-Debe ser un número positivo-")
+                    else:
+                        dinero=dinero+intr
+                        print("-Se han introducido " + str(intr) + "€-")
+                except:
+                    print("Mentira")
+        elif ans == "3":   
+            print("-Que tenga un buen día")
+            seguir=False
         else:
-            print("- '"+str(ans)+"' no era una respuesta válida-")
-cajero()
+            print("-'"+str(ans)+"' no era una respuesta válida-")
+try:
+    dineroin=int(input("(Especifique el dinero inicial): "))
+    if dineroin < 0:
+        dinero=-dinero
+except:
+    print("No creo que eso sea un número")
+    dineroin=500
+cajero(dineroin)
+
