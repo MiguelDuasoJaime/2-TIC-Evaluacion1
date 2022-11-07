@@ -1,0 +1,10 @@
+def NIF(num):
+    letras="TRWAGMYFPDXBNJZSQVHLCKE"
+    pos=num%23
+    res=letras[pos]
+    return(res)
+def comprobar(n,letr):
+    if NIF(n) == letr:
+        return(0)
+    else:
+        return(1)
