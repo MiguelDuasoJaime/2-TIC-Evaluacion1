@@ -6,7 +6,7 @@ def vocales(letra):
     else:
         return(False)
 def consonantes(letra):
-    let=["b","c","d","f","g","h","i","j","k","l","m","n","ñ","p","q","r","s","t","v","w","x","y","z"]
+    let=["b","c","d","f","g","h","j","k","l","m","n","ñ","p","q","r","s","t","v","w","x","y","z"]
     if letra in let:
         return(True)
     else:
