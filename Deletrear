@@ -5,11 +5,21 @@ def vocales(letra):
         return(True)
     else:
         return(False)
+def consonantes(letra):
+    let=["b","c","d","f","g","h","i","j","k","l","m","n","ñ","p","q","r","s","t","v","w","x","y","z"]
+    if letra in let:
+        return(True)
+    else:
+        return(False)
 def deletreo(pal):
-    cnt=0
+    cntv=0
+    cntc=0
     for x in range(0,len(pal)):
         print(pal[x])
         if vocales(pal[x]) == True:
-            cnt+=1
-    print("El nº de vocales es: " + str(cnt))
+            cntv+=1
+        elif consonantes(pal[x]) == True:
+            cntc+=1
+    print("El nº de vocales es: " + str(cntv))
+    print("El nº de consonantes es: " + str(cntc))
 deletreo(raw_input("Di una palabra: "))
